@@ -36,6 +36,7 @@ FROM alpine
 RUN apk update && apk add postgresql curl
 RUN mkdir /app
 COPY --from builder /home/postgres /app
+COPY --from builder /hello/world /app
 
 RUN curl https://rustup.sh | sh# we will use this in the container.
 
